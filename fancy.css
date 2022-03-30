@@ -1,0 +1,113 @@
+.cube {
+  max-height: inherit;
+  max-width: inherit;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 2px #0061fc, 0px 0px 2px #0061fc;
+  background: #0061fc44;
+  border-radius: 1px;
+  position: fixed;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite, hueRotation 4s linear infinite;
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes hueRotation {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cube:nth-child(2n) {
+  border-color: #0051f4;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+
+.glass-morphism {
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+  background: rgba(108, 130, 255, 0.05);
+}
+
+.neon-text {
+  -webkit-animation: flicker 1.5s infinite alternate;
+  animation: flicker 1.5s infinite alternate, hueRotation 2s linear infinite;
+  color: #fff;
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #00acfc,
+      0 0 82px #00acfc, 0 0 92px #0061fc, 0 0 102px #0061fc, 0 0 151px #0061fc;
+
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0097fc,
+      0 0 80px #00b5fc, 0 0 90px #0061fc, 0 0 100px #0061fc, 0 0 150px #0061fc;
+
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #00acfc,
+      0 0 73px #00acfc, 0 0 80px #0061fc, 0 0 94px #0061fc, 0 0 140px #0061fc;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.rgb-shdw {
+  -webkit-animation: hueRotation 4s linear infinite;
+  animation: hueRotation 4s linear infinite;
+  box-shadow: 0 0 25px #0060fc88, 0 0 125px #0061fc44;
+}
+
+.rgb-shdw-in {
+  -webkit-animation: hueRotation 4s linear infinite;
+  animation: hueRotation 4s linear infinite;
+  box-shadow: inset 0 0 5px #0060fc88, 0 0 125px #0061fc44;
+}
