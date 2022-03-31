@@ -8,6 +8,7 @@
   max-width: 400px;
   transition: all ease-in-out 0.25s;
   height: auto;
+  width: 400px;
 }
 
 .movie-card:hover {
@@ -29,8 +30,8 @@
 
 .movie-card > img {
   z-index: -1;
-  width: 400px;
-  height: 560px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center center;
   pointer-events: none;
@@ -117,7 +118,7 @@
 }
 
 .movie-card h4 {
-  text-align: center;
+  text-align: left;
   font-weight: 200;
   margin: 0px;
   font-size: 0.8rem;
