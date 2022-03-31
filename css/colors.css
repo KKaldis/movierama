@@ -1,9 +1,4 @@
 :root {
-  --primary: #8c74b1;
-  --dark: #3d2f54;
-  --light: #e6dbe2;
-  --light-glass: #e6dbe288;
-  --secondary: #00b191;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -34,4 +29,6 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
+
+  --glass-dark-50: #00000088;
 }

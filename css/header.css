@@ -3,8 +3,10 @@ header {
   padding: 2rem;
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
-  background: rgba(108, 130, 255, 0.05);
-  z-index: 1;
+  background: var(--glass-dark-50);
+  z-index: 5;
+  position: sticky;
+top: 0px;
 }
 
 .header-container {
@@ -23,27 +25,19 @@ header h1 {
   font-weight: 200;
 }
 
-header h1 img {
-  color: white;
-  height: 2rem;
-  transform: rotate(90deg);
-  margin: 0rem 0.5rem;
-}
-
 input {
   border: none;
   color: var(--bs-light);
   font-size: 1.2rem;
   border: 1px solid var(--bs-secondary);
   padding: 1rem;
-  width: 6rem;
+  width: 12rem;
   font-weight: 100;
   transition: all 0.5s ease-in-out;
   background: rgba(108, 130, 255, 0.05);
 }
 
 input:hover {
-  width: 12rem;
 }
 
 input::placeholder {
@@ -52,7 +46,7 @@ input::placeholder {
 }
 
 input:focus {
-  width: 12rem;
+  border-color: var(--bs-primary);
   outline: none;
-  background-color: #00000088;
+  background-color: var(--glass-dark-50);
 }

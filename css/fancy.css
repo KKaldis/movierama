@@ -64,7 +64,6 @@
 .glass-morphism {
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
-  background: rgba(108, 130, 255, 0.05);
 }
 
 .neon-text {
@@ -100,14 +99,33 @@
   }
 }
 
-.rgb-shdw {
+.rgb {
   -webkit-animation: hueRotation 4s linear infinite;
   animation: hueRotation 4s linear infinite;
+}
+
+.rgb-hvr:hover {
+  -webkit-animation: hueRotation 4s linear infinite;
+  animation: hueRotation 4s linear infinite;
+}
+
+.shdw {
   box-shadow: 0 0 25px #0060fc88, 0 0 125px #0061fc44;
 }
 
-.rgb-shdw-in {
-  -webkit-animation: hueRotation 4s linear infinite;
-  animation: hueRotation 4s linear infinite;
-  box-shadow: inset 0 0 5px #0060fc88, 0 0 125px #0061fc44;
+.shdw-hvr:hover {
+  box-shadow: 0 0 25px #0060fc88, 0 0 125px #0061fc44;
 }
+
+.shdw-in {
+  box-shadow: inset 0 0 25px #0060fc44;
+}
+
+.shdw-in-hvr:hover {
+  box-shadow: inset 0 0 25px #0060fc44;
+}
+
+.shdw-in:focus {
+  box-shadow: inset 0 0 5px #0060fc, 0 0 50px #0061fc88;
+}
+
