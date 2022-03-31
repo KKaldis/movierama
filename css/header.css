@@ -6,7 +6,7 @@ header {
   background: var(--glass-dark-50);
   z-index: 5;
   position: sticky;
-top: 0px;
+  top: 0px;
 }
 
 .header-container {

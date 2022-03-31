@@ -33,7 +33,7 @@ main {
 
 *::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border-radius:1rem;
+  border-radius: 1rem;
   border: 1px solid var(--bs-secondary);
 }
 
