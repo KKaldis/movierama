@@ -5,6 +5,7 @@
 @import url(main.css);
 @import url(header.css);
 @import url(card.css);
+@import url(movie.css);
 
 /* REMOVE FOR PERFORMANCE */
 @import url(fancy.css);
