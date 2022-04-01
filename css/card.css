@@ -9,6 +9,24 @@
   transition: all ease-in-out 0.25s;
   height: auto;
   width: 400px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .movie-card {
+    min-width: 80vw !important;
+    max-width: 80vw !important;
+    width: 80vw !important;
+  }
+  h3 {
+    font-size: 2rem !important;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h6 {
+    font-size: 2rem;
+  }
 }
 
 .movie-card:hover {

@@ -16,6 +16,7 @@ header {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  flex-direction: row;
 }
 
 header h1 {
@@ -23,6 +24,16 @@ header h1 {
   color: var(--bs-light);
   font-style: italic;
   font-weight: 200;
+  padding-bottom: 0rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+  }
+  header h1 {
+    padding-bottom: 2rem;
+  }
 }
 
 input {
@@ -46,6 +57,7 @@ input::placeholder {
 }
 
 input:focus {
+  width: 24rem;
   border-color: var(--bs-primary);
   outline: none;
   background-color: var(--glass-dark-50);

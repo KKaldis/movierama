@@ -16,6 +16,14 @@ main {
   justify-items: center;
   justify-content: center;
   gap: 2rem;
+  position: relative;
+  align-items: stretch;
+}
+
+@media only screen and (max-width: 1700px) {
+  main {
+    padding: 4rem 0rem;
+  }
 }
 
 *::-webkit-scrollbar {
@@ -44,4 +52,8 @@ main {
 
 *::-webkit-scrollbar-button {
   display: none;
+}
+
+.overflow-h {
+  overflow: hidden;
 }
