@@ -3,7 +3,7 @@ header {
   padding: 2rem;
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
-  background: var(--glass-dark-50);
+  background: var(--glass-dark-25);
   z-index: 5;
   position: sticky;
   top: 0px;
@@ -45,7 +45,7 @@ input {
   width: 12rem;
   font-weight: 100;
   transition: all 0.5s ease-in-out;
-  background: rgba(108, 130, 255, 0.05);
+  background: var(--glass-dark-25);
 }
 
 input:hover {
@@ -60,5 +60,4 @@ input:focus {
   width: 24rem;
   border-color: var(--bs-primary);
   outline: none;
-  background-color: var(--glass-dark-50);
 }
