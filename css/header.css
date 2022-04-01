@@ -46,25 +46,22 @@ header h1 {
     gap: 1rem;
   }
 
-  header button {
-    display: inline-block;
-  }
-
   header {
-    /* position: fixed;  /*both sticky and fixed work nice */
+    position: fixed;  /*both sticky and fixed work nice */
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
     height: 112px;
     overflow: hidden;
     top: -90px;
     transition: all 0.5s ease-in-out;
   }
 
-  input {
-    display: block;
-  }
   #mobile-nav {
     justify-content: space-around;
+  }
+
+  .btn {
+    display: inline-block !important;
   }
 }
 
@@ -99,6 +96,15 @@ input:focus {
 }
 
 .btn {
-  height: 2rem;
-  width: 2rem;
+  display: none;
+  color: var(--bs-light);
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--glass-dark-25);
+  cursor: pointer;
+  border: 1px solid var(--bs-secondary);
+}
+
+.btn:hover {
+  border: 1px solid var(--bs-primary);
 }
