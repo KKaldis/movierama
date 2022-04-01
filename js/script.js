@@ -16,6 +16,8 @@ var isSearching = false;
 var search;
 // init search state
 var scrolling = true;
+//init mobile search show state
+var mobSearch = false;
 
 //! RUN AFTER DOM IS FULLY LOADED
 document.addEventListener("DOMContentLoaded", () => {

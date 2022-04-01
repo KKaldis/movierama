@@ -37,3 +37,15 @@ const openMovie = (id) => {
         }
     }
 }
+
+//! TOGGLES THE SEARCH INPUT
+const toggleSearch = () => {
+    mobSearch = !mobSearch;
+    if (mobSearch === true) {
+        document.getElementById('header').classList += " show-search";
+    }
+    else {
+        document.getElementById('header').classList.remove("show-search");
+    }
+    console.log(mobSearch);
+}

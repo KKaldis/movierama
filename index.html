@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>MovieRama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="./css/style.css" rel="stylesheet" />
     <script src="./js/apicalls.js"></script>
     <script src="./js/rendercards.js"></script>
@@ -16,9 +17,12 @@
     <div class="cube"></div>
     <div class="cube"></div>
     <div class="cube"></div>
-    <header>
+    <header id="header">
       <div id="form" class="header-container">
+        <div id="mobile-nav">
         <h1 class="neon-text">MovieRama</h1>
+        <button class="btn" onclick="toggleSearch()"><i class="fa fa-search"></i></button>
+      </div>
         <input
           type="text"
           autocomplete="off"

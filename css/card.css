@@ -49,7 +49,8 @@
 .movie-card > img {
   z-index: -1;
   width: 100%;
-  height: auto;
+  max-height: 550px;
+  min-height: 400px;
   object-fit: cover;
   object-position: center center;
   pointer-events: none;
