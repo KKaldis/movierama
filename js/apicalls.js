@@ -1,5 +1,6 @@
 //! FETCH GENRES LIST FOR RENDERING THEM ON MOVIE CARDS
 const getGenres = async () => {
+
   /// fetch command and url
   await fetch(`${DB_URL}/genre/movie/list?api_key=${API_KEY}`).then(res => res.json()).then(data => {
     //convert genres object for easy key access when rendering movie cards
@@ -11,6 +12,7 @@ const getGenres = async () => {
 
 //! FETCH NOW PLAYING
 const getNowPlaying = async (page) => {
+
   // fetch command and url
   await fetch(`${DB_URL}/movie/now_playing?api_key=${API_KEY}&page=${page}`).then(res => res.json()).then(data => {
     // render the fetched movies
@@ -24,7 +26,6 @@ const getNowPlaying = async (page) => {
 
 //! FETCH SEARCH
 const getSearch = async (page, isTyping) => {
-
 
   //set the lenght of search to check if the user is searching
   search.value.length > 0 ? isSearching = true : isSearching = false

@@ -22,7 +22,6 @@ const openMovie = (id) => {
     document.getElementById(id).style.overflow = "hidden"
 
     setTimeout(() => {
-
         document.getElementById("movie").classList += " active";
         document.getElementById("body").classList += " overflow-h";
     }, 1500)
@@ -42,10 +41,15 @@ const openMovie = (id) => {
 const toggleSearch = () => {
     mobSearch = !mobSearch;
     if (mobSearch === true) {
+        // change class to show mobile search bar
         document.getElementById('header').classList += " show-search";
+        // change button icon
+        document.getElementById('btn-icon').classList = "fa fa-times";
     }
     else {
+        // change class to hide mobile search bar
         document.getElementById('header').classList.remove("show-search");
+        // change button icon
+        document.getElementById('btn-icon').classList = "fa fa-search";
     }
-    console.log(mobSearch);
 }
