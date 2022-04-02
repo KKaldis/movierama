@@ -36,9 +36,7 @@ const openMovie = (id) => {
     // hide all other cards
     for (const card of hiddenCards) {
         if (parseInt(card.id) !== id) {
-            console.log(parseInt(card.id) !== id);
             card.classList += " hidden-card"
-            console.log(card.classList);
         }
     }
 }
@@ -55,7 +53,6 @@ const closeMovie = () => {
     setTimeout(() => {
         for (const card of hiddenCards) {
             card.classList.remove('hidden-card')
-            console.log(card.classList);
         }
     }, 500)
 }

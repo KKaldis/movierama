@@ -92,12 +92,13 @@ const setVideo = (data) => {
   const movieEl = document.createElement('div');
 
   movieEl.innerHTML = `
- <div class='iframe-container'>
+  <div class="iframe-container">
   <iframe  src="https://www.youtube.com/embed/${data[0].key}" title="${data[0].name}" 
   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
   gyroscope; picture-in-picture" allowfullscreen>
   </iframe>
-  </div> `
+  </div>
+  `
 
   video.innerHTML = movieEl.innerHTML
 }
