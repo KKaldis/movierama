@@ -241,3 +241,9 @@
 .btn-shine:hover:before {
   left: -100%;
 }
+
+.hidden-card {
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  transition-delay: 1s;
+}

@@ -66,6 +66,7 @@ movie {
 .no-tag {
   text-align: center;
   font-size: 2rem;
+  font-weight: 200;
 }
 
 .details-movie-card {
@@ -97,4 +98,143 @@ movie {
   overflow-y: hidden;
   height: -webkit-fill-available;
   margin: 1rem;
+}
+
+.title {
+  grid-area: title;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  position: relative;
+}
+.player {
+  grid-area: player;
+  height: fit-content;
+  width: auto;
+  padding: 1rem;
+  position: relative;
+  height: 0;
+}
+
+.reviews {
+  grid-area: reviews;
+  padding: 1rem;
+  font-weight: 200;
+  width: auto;
+  overflow-y: auto;
+  position: relative;
+  height: -webkit-fill-available;
+}
+
+.reviews > span {
+  font-weight: 500;
+}
+
+.similar {
+  grid-area: relative;
+  padding: 1rem;
+  padding-bottom: 0rem;
+  font-weight: 200;
+  width: auto;
+  overflow-y: hidden;
+  position: relative;
+  overflow-x: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.border-secondary {
+  border: 1px solid var(--bs-secondary);
+}
+
+.grid-container {
+  margin: 1rem;
+  align-content: stretch;
+  height: inherit;
+  width: auto;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  grid-template-rows: min-content 1fr 1fr;
+  grid-template-areas:
+    "title title "
+    "player  reviews"
+    "player  relative";
+  gap: 1rem;
+}
+
+.grid-container > div {
+  color: var(--bs-light);
+  height: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+    margin: 2rem;
+    grid-template-areas:
+      "title title "
+      "player player  "
+      "relative reviews  "
+      " relative reviews";
+    grid-template-rows: auto auto 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .reviews {
+    width: auto;
+  }
+  #video {
+    height: 0px !important;
+  }
+}
+
+#video {
+  height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .grid-container {
+    margin: 1rem;
+    grid-template-areas:
+      "title title "
+      "player player  "
+      "reviews reviews  "
+      "relative relative ";
+    grid-template-rows: auto auto 1fr 1fr;
+  }
+  .reviews {
+    width: auto;
+  }
+  #video {
+    height: 0px !important;
+  }
+}
+
+.iframe-container {
+  position: relative;
+  /* width: 100%; */
+  padding-bottom: 56.25%;
+  height: 0;
+  /* position: initial; */
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#similar {
+  display: flex;
+
+  gap: 1rem;
+
+  font-weight: 200;
+  width: auto;
+  position: relative;
+  height: -webkit-fill-available;
 }

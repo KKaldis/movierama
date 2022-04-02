@@ -15,7 +15,7 @@ const getNowPlaying = async (page) => {
 
   // fetch command and url
   await fetch(`${DB_URL}/movie/now_playing?api_key=${API_KEY}&page=${page}`).then(res => res.json()).then(data => {
-    // render the fetched movies
+    // render the fetched
     renderMovies(data.results)
   }).catch(error => {
     console.log(error.message);
@@ -39,7 +39,7 @@ const getSearch = async (page, isTyping) => {
   if (isSearching === true) {
     // fetch command and url
     await fetch(`${DB_URL}/search/movie?api_key=${API_KEY}&query=${search.value}&page=${page}`).then(res => res.json()).then(data => {
-      // render the fetched movies
+      // render the fetched
       renderMovies(data.results)
     }).catch(error => {
       console.log(error.message);
@@ -56,11 +56,8 @@ const getSearch = async (page, isTyping) => {
 //! FETCH MOVIE DETAILS
 const getMovie = async (id) => {
   await fetch(`${DB_URL}/movie/${id}?api_key=${API_KEY}`).then(res => res.json()).then(data => {
-    // render the fetched movies
-    console.log(data);
+    // render the fetched
     setDetails(data);
-
-    console.log("details", data);
   }).catch(error => {
     console.log(error.message);
   });
@@ -69,8 +66,7 @@ const getMovie = async (id) => {
 //! FETCH MOVIE VIDEO
 const getVideo = async (id) => {
   await fetch(`${DB_URL}/movie/${id}/videos?api_key=${API_KEY}`).then(res => res.json()).then(data => {
-    // render the fetched movies
-    console.log("videos", data.results);
+    // render the fetched
     setVideo(data.results)
     // renderDetails(data.results, id)
   }).catch(error => {
@@ -81,7 +77,7 @@ const getVideo = async (id) => {
 //! FETCH MOVIE REVIEWS
 const getReviews = async (id) => {
   await fetch(`${DB_URL}/movie/${id}/reviews?api_key=${API_KEY}`).then(res => res.json()).then(data => {
-    console.log("reviews", data.results);
+    // render the fetched
     setReviews(data.results);
 
   }).catch(error => {
@@ -92,8 +88,7 @@ const getReviews = async (id) => {
 //! FETCH MOVIE SIMILAR
 const getSimilar = async (id) => {
   await fetch(`${DB_URL}/movie/${id}/similar?api_key=${API_KEY}`).then(res => res.json()).then(data => {
-    // render the fetched movies
-    console.log("similar", data.results);
+    // render the fetched
     setSimilar(data.results)
 
   }).catch(error => {
