@@ -27,7 +27,6 @@ const openMovie = (id) => {
     getVideo(id);
     getSimilar(id);
 
-
     // show modal
     document.getElementById("movie").classList += " active";
     document.getElementById("body").classList += " overflow-h";
@@ -69,7 +68,21 @@ const toggleSearch = () => {
     }
 }
 
-// //! CLICK OUTSIDE MODAL HANDLER
+//! CLICK OUTSIDE MODAL HANDLER
 window.addEventListener('click', function (e) {
     document.getElementById('movie') === e.target && closeMovie();
 });
+
+//! DEBOUNCER FOR SEARCH
+const debounce = (func, timeout = 300) => {
+    let timer;
+    return (...args) => {
+        if (!timer) {
+            func.apply(this, args);
+        }
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            timer = undefined;
+        }, timeout);
+    };
+}

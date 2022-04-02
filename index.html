@@ -34,8 +34,8 @@
           <i class="fa fa-search" id="btn-icon"></i>
         </button>
       </div>
-      <input type="text" autocomplete="off" placeholder="Search" id="search" class="glass-morphism rgb shdw-in"
-        onkeyup="getSearch()" />
+      <input type="search" autocomplete="off" placeholder="Search" id="search" class="glass-morphism rgb shdw-in"
+        onkeyup="debounce(getSearch())" />
     </div>
   </header>
   <!-- ! Movie List -->
