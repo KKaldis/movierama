@@ -104,30 +104,42 @@ const setVideo = (data) => {
 //! RENDER MOVIE SIMILARS
 const setSimilar = (data) => {
 
-  var reviews
-  reviews = document.getElementById("reviews");
-  data.length === 0 ?
-    reviews.innerHTML = `<div class="tag">No Reviews</div>`
-    :
-    reviews.innerHTML = `<div class="no-tag">Reviews</div>`
-  var i = 1;
 
-  data.forEach(review => {
+  // data.length === 0 ?
+  //   similar.innerHTML = `<div class="tag">No Similar Titles</div>`
+  //   :
+  //   similar.innerHTML = `<div class="overflow-x-a">
+  //   <div id="similar"></div>
+  // </div>`
 
-    if (i <= 2) {
-      i++
-      const movieEl = document.createElement('div');
+  var similar
+  similar = document.getElementById("similar");
 
-      movieEl.innerHTML = `
-     <div class='review-single'>
-     <b>${review.author}</b>
-     ${review.content}
-     </div>
-          `
-      reviews.innerHTML += movieEl.innerHTML
-    }
-  }
-  )
+  similar.innerHTML = ""
+  data.forEach(movie => {
+    //destruct of object to multiple variables
+    var { title, poster_path, id } = movie;
+
+    //conditional rendering for poster image
+    poster_path ? poster_path = (POSTER_URL + poster_path) : poster_path = './poster.jpg';
+
+    //create a div to store the new card 
+    const movieEl = document.createElement('div');
+    //add a class to the crated div - movie card
+    movieEl.classList.add('details-movie-card');
+    //set an id on the crated card
+    movieEl.setAttribute('id', id);
+    movieEl.setAttribute('onclick', `openMovie(${id});`);
+
+    //card html body
+    movieEl.innerHTML = `
+            <span></span>
+            <img src="${poster_path}" alt="${title}"/>
+            `
+    //add movie card to the list of rendered movie cards
+    similar.appendChild(movieEl)
+  });
+
 }
 
 //! CONVERT FROM FETCHED DATE TO YEAR

@@ -46,7 +46,7 @@ header h1 {
   }
 
   header {
-    position: fixed;  /*both sticky and fixed work nice */
+    position: fixed; /*both sticky and fixed work nice */
     width: 100%;
     padding: 2rem 0rem;
     height: 112px;

@@ -57,7 +57,7 @@ const getSearch = async (page, isTyping) => {
 const getMovie = async (id) => {
   await fetch(`${DB_URL}/movie/${id}?api_key=${API_KEY}`).then(res => res.json()).then(data => {
     // render the fetched movies
-
+    console.log(data);
     setDetails(data);
 
     console.log("details", data);
@@ -91,9 +91,10 @@ const getReviews = async (id) => {
 
 //! FETCH MOVIE SIMILAR
 const getSimilar = async (id) => {
-  await fetch(`${DB_URL}/movie/${id}/reviews?api_key=${API_KEY}`).then(res => res.json()).then(data => {
+  await fetch(`${DB_URL}/movie/${id}/similar?api_key=${API_KEY}`).then(res => res.json()).then(data => {
     // render the fetched movies
     console.log("similar", data.results);
+    setSimilar(data.results)
 
   }).catch(error => {
     console.log(error.message);
