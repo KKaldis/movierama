@@ -52,3 +52,50 @@ const getSearch = async (page, isTyping) => {
     getNowPlaying(pageCountNow);
   }
 }
+
+//! FETCH MOVIE DETAILS
+const getMovie = async (id) => {
+  await fetch(`${DB_URL}/movie/${id}?api_key=${API_KEY}`).then(res => res.json()).then(data => {
+    // render the fetched movies
+
+    setDetails(data);
+
+    console.log("details", data);
+  }).catch(error => {
+    console.log(error.message);
+  });
+}
+
+//! FETCH MOVIE VIDEO
+const getVideo = async (id) => {
+  await fetch(`${DB_URL}/movie/${id}/videos?api_key=${API_KEY}`).then(res => res.json()).then(data => {
+    // render the fetched movies
+    console.log("videos", data.results);
+    setVideo(data.results)
+    // renderDetails(data.results, id)
+  }).catch(error => {
+    console.log(error.message);
+  });
+}
+
+//! FETCH MOVIE REVIEWS
+const getReviews = async (id) => {
+  await fetch(`${DB_URL}/movie/${id}/reviews?api_key=${API_KEY}`).then(res => res.json()).then(data => {
+    console.log("reviews", data.results);
+    setReviews(data.results);
+
+  }).catch(error => {
+    console.log(error.message);
+  });
+}
+
+//! FETCH MOVIE SIMILAR
+const getSimilar = async (id) => {
+  await fetch(`${DB_URL}/movie/${id}/reviews?api_key=${API_KEY}`).then(res => res.json()).then(data => {
+    // render the fetched movies
+    console.log("similar", data.results);
+
+  }).catch(error => {
+    console.log(error.message);
+  });
+}

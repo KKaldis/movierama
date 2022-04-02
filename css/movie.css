@@ -9,6 +9,7 @@ movie {
   background-color: var(--glass-dark-50);
   transition: 0.5s top ease-in-out;
   /* padding: 5rem; */
+  border-top: 1px solid var(--bs-secondary);
 }
 
 .active {
@@ -21,12 +22,11 @@ movie {
   /* border: 1px solid var(--bs-secondary); */
   position: relative;
   margin: 5rem;
-  padding: 5rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .movie-container {
-    padding: 2rem;
+    padding: 0rem;
     margin: 2rem;
   }
 }
@@ -40,6 +40,19 @@ movie {
   border: 1px solid var(--bs-primary);
 }
 
-.test {
-  color: red;
+.review-single {
+  padding: 1rem;
+  text-align: justify;
+}
+
+#container-details {
+  height: -webkit-fill-available;
+}
+
+.no-reviews {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
 }

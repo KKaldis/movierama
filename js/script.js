@@ -18,18 +18,35 @@ var search;
 var scrolling = true;
 //init mobile search show state
 var mobSearch = false;
+//init movie details modal state
+var movieDetailsState = false;
+//init movie details - div 
+var details;
+
+// detaisl video
+var video
+// detaisl video
+var trailers
 
 //! RUN AFTER DOM IS FULLY LOADED
 document.addEventListener("DOMContentLoaded", () => {
   // get the main html tag
   main = document.getElementById('main');
+  // init movies card container variable
+  main.innerHTML = '';
   // get the search input tag
   search = document.getElementById("search");
   // init movies card container variable
-  main.innerHTML = '';
+  details = document.getElementById("details-container");
+  // init movies card container variable
+  video = document.getElementById("player");
+  // init movies card container variable
+  trailers = document.getElementById("trailers");
+
+
+  // run the fetch function to get the genres
+  getGenres();
   // page load fetch now playing
   getNowPlaying(pageCountNow);
 });
 
-// run the fetch function to get the genres
-getGenres();

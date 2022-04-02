@@ -58,3 +58,11 @@ main {
 .overflow-h {
   overflow: hidden;
 }
+
+.overflow-a {
+  overflow: auto;
+  height: inherit;
+}
+span {
+  pointer-events: none;
+}
