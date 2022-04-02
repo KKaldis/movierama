@@ -9,7 +9,7 @@ const renderMovies = (data) => {
     //conditional rendering when no overview
     overview === '' ? overview = "<h1>NO OVERVIEW AVAILABLE</h1>" : overview = ` <h6>${overview} </h6>`
     //conditional rendering for poster image
-    poster_path ? poster_path = (POSTER_URL + poster_path) : poster_path = './poster.jpg';
+    poster_path ? poster_path = (POSTER_URL + poster_path) : poster_path = './poster.png';
 
     //create a div to store the new card 
     const movieEl = document.createElement('div');
@@ -115,7 +115,7 @@ const setSimilar = (data) => {
     var { title, poster_path, id } = movie;
 
     //conditional rendering for poster image
-    poster_path ? poster_path = (POSTER_URL + poster_path) : poster_path = './poster.jpg';
+    poster_path ? poster_path = (POSTER_URL + poster_path) : poster_path = './poster.png';
     //create a div to store the new card 
     const movieEl = document.createElement('div');
     //add a class to the crated div - movie card
