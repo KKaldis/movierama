@@ -17,6 +17,7 @@ window.addEventListener('scroll', () => {
 
 //! OPENS MODAL FOR MOVIE DETAILS
 const openMovie = (id) => {
+    isDetailsOpen = true;
     var hiddenCards = document.getElementsByClassName('movie-card');
     document.getElementById(id).scrollIntoView({ block: "end", behavior: 'smooth' });
 
@@ -28,10 +29,8 @@ const openMovie = (id) => {
 
 
     // show modal
-    setTimeout(() => {
-        document.getElementById("movie").classList += " active";
-        document.getElementById("body").classList += " overflow-h";
-    }, 1500)
+    document.getElementById("movie").classList += " active";
+    document.getElementById("body").classList += " overflow-h";
 
     // hide all other cards
     for (const card of hiddenCards) {
@@ -43,18 +42,18 @@ const openMovie = (id) => {
 
 //! CLOSE MODAL 
 const closeMovie = () => {
+    isDetailsOpen = false;
     var hiddenCards = document.getElementsByClassName('movie-card');
+    video.innerHTML = ""
 
     // hide modal
     document.getElementById("movie").classList.remove("active");
     document.getElementById("body").classList.remove("overflow-h");
 
     // show hidden cards
-    setTimeout(() => {
-        for (const card of hiddenCards) {
-            card.classList.remove('hidden-card')
-        }
-    }, 500)
+    for (const card of hiddenCards) {
+        card.classList.remove('hidden-card')
+    }
 }
 
 //! TOGGLES THE SEARCH ICON ON MOBILE NAV BAR
@@ -69,3 +68,8 @@ const toggleSearch = () => {
         document.getElementById('btn-icon').classList = "fa fa-search";
     }
 }
+
+// //! CLICK OUTSIDE MODAL HANDLER
+window.addEventListener('click', function (e) {
+    document.getElementById('movie') === e.target && closeMovie();
+});

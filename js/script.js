@@ -19,7 +19,7 @@ var scrolling = true;
 //init mobile search show state
 var mobSearch = false;
 //init movie details modal state
-var movieDetailsState = false;
+var isDetailsOpen = false;
 
 
 

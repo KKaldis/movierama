@@ -243,7 +243,9 @@
 }
 
 .hidden-card {
-  transition: all 1s ease-in-out;
-  opacity: 0;
   transition-delay: 1s;
+  transition-property: opacity;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
 }

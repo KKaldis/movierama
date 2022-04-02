@@ -9,7 +9,7 @@ header {
   top: 0px;
 }
 
-header button {
+header > button {
   display: none;
 }
 
@@ -95,13 +95,16 @@ input:focus {
 }
 
 .btn {
-  display: none;
   color: var(--bs-light);
   height: 3rem;
   width: 3rem;
   background-color: var(--glass-dark-25);
   cursor: pointer;
   border: 1px solid var(--bs-secondary);
+}
+
+header .btn {
+  display: none;
 }
 
 .btn:hover {

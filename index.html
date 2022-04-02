@@ -13,17 +13,20 @@
 </head>
 
 <body id="body">
+  <!-- Animation Cubes -->
   <div class="cube"></div>
   <div class="cube"></div>
   <div class="cube"></div>
   <div class="cube"></div>
   <div class="cube"></div>
   <div class="cube"></div>
+  <!-- ! Top Bar -->
   <header id="header">
     <div id="form" class="header-container">
       <div id="mobile-nav">
         <h1 class="neon-text">MovieRama</h1>
         <button class="btn-rgb btn-shine shdw-in rgb btn" onclick="toggleSearch()">
+         <!-- Animation Element -->
           <span></span>
           <span></span>
           <span></span>
@@ -35,42 +38,52 @@
         onkeyup="getSearch()" />
     </div>
   </header>
+  <!-- ! Movie List -->
   <viewport>
     <main id="main"></main>
-    <movie id="movie" class="glass-morphism" onclick="closeMovie()">
-      <div id="details-container" class="glass-morphism movie-container">
-        <span class="movie-container-span shdw-in rgb"></span>
-        <div class="overflow-a details-container-inner">
-          <div class="grid-container">
-            <div class="title border-secondary">
+
+  </viewport>
+
+  <!-- ! Movie Details -->
+  <movie id="movie" class="glass-morphism">
+    <div id="details-container" class="glass-morphism movie-container">
+      <span class="movie-container-span shdw-in rgb"></span>
+      <div class="overflow-a details-container-inner">
+        <div class="grid-container">
+          <div class="title border-secondary">
+            <div class="movie-bar">
               <div id="title"></div>
+              -
               <div id="date"></div>
             </div>
-            <div id="video" class="player border-secondary iframe-container">
+            <button class="btn-rgb btn-shine shdw-in rgb btn" onclick="closeMovie()">
+               <!-- Animation Element -->
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i class="fa fa-times" id="btn-icon"></i>
+            </button>
+          </div>
+          <div id="video" class="player border-secondary iframe-container">
+            <iframe></iframe>
+          </div>
+          <div id="reviews" class="reviews border-secondary">
+          </div>
+          <div class="similar border-secondary">
+            <div class="no-tag">Similar Titles</div>
+            <div class="overflow-x-a">
+              <div id="similar">
 
-              <iframe src="https://www.youtube.com/embed/YHx_mah4Xhs" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-
-
-            <div id="reviews" class="reviews border-secondary">
-            </div>
-            <div class="similar border-secondary">
-              <div class="no-tag">Similar Titles</div>
-              <div class="overflow-x-a">
-                <div id="similar">
-
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      </div>
-    </movie>
-  </viewport>
+    </div>
+    </div>
+    </div>
+  </movie>
 </body>
 
 </html>
