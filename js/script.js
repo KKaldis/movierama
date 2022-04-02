@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
   main.innerHTML = '';
   // get the search input tag
   search = document.getElementById("search");
+  //click on search clear (X) brings refectch 
+  document.getElementById("search").addEventListener("search", function (event) {
+    getNowPlaying()
+  });
 
   // run the fetch function to get the genres
   getGenres();
