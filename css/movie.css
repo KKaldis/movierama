@@ -110,6 +110,13 @@ movie {
   height: fit-content;
   position: relative;
 }
+
+@media only screen and (max-width: 1200px) {
+  .title {
+    font-size: 1.25rem;
+  }
+}
+
 .player {
   grid-area: player;
   height: fit-content;
@@ -239,4 +246,5 @@ movie {
 .movie-bar {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
