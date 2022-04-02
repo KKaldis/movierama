@@ -24,7 +24,7 @@ movie {
   margin: 5rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
   .movie-container {
     padding: 0rem;
     margin: 2rem;
@@ -49,10 +49,15 @@ movie {
   height: -webkit-fill-available;
 }
 
-.no-reviews {
+.tag {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.no-tag {
+text-align: center;
+  font-size: 2rem;
 }

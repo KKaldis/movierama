@@ -44,6 +44,98 @@ const renderMovies = (data) => {
   });
 }
 
+//!RENDER MOVIE DETAILS
+const setDetails = (data) => {
+  var title
+  title = document.getElementById("title");
+  title.innerHTML = `${data.title}`
+  var year
+  year = document.getElementById("date");
+  year.innerHTML = `${formYear(data.release_date)}`
+}
+
+//! RENDER MOVIE REVIEWS
+const setReviews = (data) => {
+
+  var reviews
+  reviews = document.getElementById("reviews");
+  data.length === 0 ?
+    reviews.innerHTML = `<div class="tag">No Reviews</div>`
+    :
+    reviews.innerHTML = `<div class="no-tag">Reviews</div>`
+  var i = 1;
+
+  data.forEach(review => {
+
+    if (i <= 2) {
+      i++
+      const movieEl = document.createElement('div');
+
+      movieEl.innerHTML = `
+     <div class='review-single'>
+     <b>${review.author}</b>
+     ${review.content}
+     </div>
+          `
+      reviews.innerHTML += movieEl.innerHTML
+    }
+  }
+  )
+}
+
+//! RENDER MOVIE TRAILER
+const setVideo = (data) => {
+  var video
+  video = document.getElementById("video");
+  data.length === 0 ? video.innerHTML = `<div class="no-tag">No Trailer</div>` : video.innerHTML = ``
+
+  const movieEl = document.createElement('div');
+
+  movieEl.innerHTML = `
+          <div class='iframe-container'>
+  <iframe  src="https://www.youtube.com/embed/${data[0].key}" title="${data[0].name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div> `
+  video.innerHTML = movieEl.innerHTML
+
+
+
+}
+
+//! RENDER MOVIE SIMILARS
+const setSimilar = (data) => {
+
+  var reviews
+  reviews = document.getElementById("reviews");
+  data.length === 0 ?
+    reviews.innerHTML = `<div class="tag">No Reviews</div>`
+    :
+    reviews.innerHTML = `<div class="no-tag">Reviews</div>`
+  var i = 1;
+
+  data.forEach(review => {
+
+    if (i <= 2) {
+      i++
+      const movieEl = document.createElement('div');
+
+      movieEl.innerHTML = `
+     <div class='review-single'>
+     <b>${review.author}</b>
+     ${review.content}
+     </div>
+          `
+      reviews.innerHTML += movieEl.innerHTML
+    }
+  }
+  )
+}
+
+//! CONVERT FROM FETCHED DATE TO YEAR
+const formYear = (date) => {
+  let release_year = date.split("-");
+  return release_year[0];
+}
+
 //! ITERATE CARD GENRES & GENERATE GENRE TITLES
 const cardGernes = (genresIds) => {
   //init genres string for storing
@@ -52,84 +144,4 @@ const cardGernes = (genresIds) => {
   genresIds.map(genreId => genresString += `${genres[genreId]}, `)
   //return the genres as a list and remove the last " " and ","
   return String(genresString).slice(0, -2)
-}
-
-
-const setDetails = (data) => {
-  // details title
-  var title
-  // init movies card container variable
-  title = document.getElementById("title");
-  title.innerHTML = `${data.title}`
-  var year
-  // init movies card container variable
-  year = document.getElementById("date");
-  year.innerHTML = `${formYear(data.release_date)}`
-}
-
-const setReviews = (data) => {
-  // details title
-  var reviews
-  // init movies card container variable
-  reviews = document.getElementById("reviews");
-  data.length === 0 ? reviews.innerHTML = `<div class="no-reviews">No Reviews</div>` : reviews.innerHTML = ``
-  var i = 1;
-  // reviews.innerHTML = `${data}`
-  data.forEach(review => {
-
-    if (i <= 2) {
-      i++
-
-      // data === [] ? reviews = "<h1>dsfsdfds</h1>" : reviews = ` <h6>${reviews} </h6>`
-
-      //create a div to store the new card 
-      const movieEl = document.createElement('div');
-      //add a class to the crated div - movie card
-      //card html body
-      movieEl.innerHTML = `
-         
-     <div class='review-single'>
-     <b>${review.author}</b>
-     ${review.content}
-     </div>
-          `
-      //add movie card to the list of rendered movie cards
-      reviews.innerHTML += movieEl.innerHTML
-    }
-
-  }
-  )
-}
-
-const setVideo = (data) => {
-  // details title
-  var video
-  // init movies card container variable
-  video = document.getElementById("player");
-  data.length === 0 ? video.innerHTML = `<div class="no-reviews">No Trailer</div>` : video.innerHTML = ``
-
-  // reviews.innerHTML = `${data}`
-
-  // data === [] ? reviews = "<h1>dsfsdfds</h1>" : reviews = ` <h6>${reviews} </h6>`
-
-  //create a div to store the new card 
-  const movieEl = document.createElement('div');
-  //add a class to the crated div - movie card
-  //card html body
-  movieEl.innerHTML = `
-          <div class='iframe-container'>
-  <iframe  src="https://www.youtube.com/embed/${data[0].key}" title="${data[0].name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div> `
-  //add movie card to the list of rendered movie cards
-  video.innerHTML = movieEl.innerHTML
-
-
-
-}
-
-
-//! convert from date string to year
-const formYear = (date) => {
-  let release_year = date.split("-");
-  return release_year[0];
 }

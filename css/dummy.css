@@ -14,6 +14,7 @@
   width: auto;
   padding: 1rem;
   position: relative;
+height: 0;
 }
 
 .rest{
@@ -29,10 +30,9 @@
   padding: 1rem;
   font-weight: 200;
   width: auto;
-  height: 50%;
   overflow-y: auto;
   position: relative;
-  
+  height: -webkit-fill-available;;
 }
 
 .reviews > span {
@@ -81,11 +81,35 @@
     grid-template-areas:
       "title title "
       "player player  "
-      "reviews reviews  "
-      "relative relative ";
+      "relative reviews  "
+      " relative reviews";
+      grid-template-rows: auto auto 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   }
   .reviews {
     width: auto;
+  }
+  #player{
+  height: 0px !important;
+
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .grid-container {
+    margin: 2rem;
+    grid-template-areas:
+      "title title "
+      "player player  "
+      "reviews reviews  "
+      "relative relative ";
+      grid-template-rows: auto auto 1fr 1fr;
+  }
+  .reviews {
+    width: auto;
+  }
+  #player{
+  height: 0px !important;
   }
 }
 

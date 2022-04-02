@@ -20,13 +20,8 @@ var scrolling = true;
 var mobSearch = false;
 //init movie details modal state
 var movieDetailsState = false;
-//init movie details - div 
-var details;
 
-// detaisl video
-var video
-// detaisl video
-var trailers
+
 
 //! RUN AFTER DOM IS FULLY LOADED
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,13 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   main.innerHTML = '';
   // get the search input tag
   search = document.getElementById("search");
-  // init movies card container variable
-  details = document.getElementById("details-container");
-  // init movies card container variable
-  video = document.getElementById("player");
-  // init movies card container variable
-  trailers = document.getElementById("trailers");
-
 
   // run the fetch function to get the genres
   getGenres();
