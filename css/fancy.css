@@ -67,9 +67,11 @@
 }
 
 .neon-text {
+  display: flex;
+  flex-direction: row;
   -webkit-animation: flicker 1.5s infinite alternate;
   animation: flicker 1.5s infinite alternate, hueRotation 2s linear infinite;
-  color: #fff;
+  color: var(--bs-light);
 }
 
 @keyframes flicker {

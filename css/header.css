@@ -110,3 +110,17 @@ header .btn {
 .btn:hover {
   border: 1px solid var(--bs-primary);
 }
+
+.rotate {
+  padding: 0rem 0.5rem;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
