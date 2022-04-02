@@ -92,25 +92,18 @@ const setVideo = (data) => {
   const movieEl = document.createElement('div');
 
   movieEl.innerHTML = `
-          <div class='iframe-container'>
-  <iframe  src="https://www.youtube.com/embed/${data[0].key}" title="${data[0].name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <div class='iframe-container'>
+  <iframe  src="https://www.youtube.com/embed/${data[0].key}" title="${data[0].name}" 
+  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+  gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
   </div> `
+
   video.innerHTML = movieEl.innerHTML
-
-
-
 }
 
 //! RENDER MOVIE SIMILARS
 const setSimilar = (data) => {
-
-
-  // data.length === 0 ?
-  //   similar.innerHTML = `<div class="tag">No Similar Titles</div>`
-  //   :
-  //   similar.innerHTML = `<div class="overflow-x-a">
-  //   <div id="similar"></div>
-  // </div>`
 
   var similar
   similar = document.getElementById("similar");
@@ -122,7 +115,6 @@ const setSimilar = (data) => {
 
     //conditional rendering for poster image
     poster_path ? poster_path = (POSTER_URL + poster_path) : poster_path = './poster.jpg';
-
     //create a div to store the new card 
     const movieEl = document.createElement('div');
     //add a class to the crated div - movie card

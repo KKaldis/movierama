@@ -20,11 +20,14 @@ const openMovie = (id) => {
     var hiddenCards = document.getElementsByClassName('movie-card');
     document.getElementById(id).scrollIntoView({ block: "end", behavior: 'smooth' });
 
+    // fetch all data
     getMovie(id);
     getReviews(id);
     getVideo(id);
     getSimilar(id);
 
+
+    // show modal
     setTimeout(() => {
         document.getElementById("movie").classList += " active";
         document.getElementById("body").classList += " overflow-h";
@@ -43,9 +46,12 @@ const openMovie = (id) => {
 //! CLOSE MODAL 
 const closeMovie = () => {
     var hiddenCards = document.getElementsByClassName('movie-card');
+
+    // hide modal
     document.getElementById("movie").classList.remove("active");
     document.getElementById("body").classList.remove("overflow-h");
 
+    // show hidden cards
     setTimeout(() => {
         for (const card of hiddenCards) {
             card.classList.remove('hidden-card')
@@ -58,15 +64,11 @@ const closeMovie = () => {
 const toggleSearch = () => {
     mobSearch = !mobSearch;
     if (mobSearch === true) {
-        // change class to show mobile search bar
         document.getElementById('header').classList += " show-search";
-        // change button icon
         document.getElementById('btn-icon').classList = "fa fa-times";
     }
     else {
-        // change class to hide mobile search bar
         document.getElementById('header').classList.remove("show-search");
-        // change button icon
         document.getElementById('btn-icon').classList = "fa fa-search";
     }
 }
