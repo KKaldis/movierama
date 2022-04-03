@@ -64,10 +64,13 @@ movie {
   border: 1px solid transparent;
   transform: scale(0.9);
 }
+.details-movie-card:hover {
+  transform: scale(1);
+}
 
 .details-movie-card:hover > span {
   border: 1px solid var(--bs-primary);
-  transform: scale(1);
+  height: inherit;
 }
 
 .details-movie-card > img {
@@ -88,6 +91,7 @@ movie {
   left: 0px;
   right: 0px;
   bottom: 0px;
+  height: inherit;
 }
 
 .overflow-x-a {
