@@ -126,7 +126,7 @@ const setSimilar = (data) => {
 
     //card html body
     movieEl.innerHTML = `
-            <span></span>
+            <span class="rgb"></span>
             <img src="${poster_path}" alt="${title}"/>
             `
     //add movie card to the list of rendered movie cards
