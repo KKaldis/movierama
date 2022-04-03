@@ -113,14 +113,14 @@ header .btn {
 
 .rotate {
   padding: 0rem 0.5rem;
-  animation: rotation 2s infinite linear;
+  animation: rotation 2s infinite alternate;
 }
 
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1);
   }
   to {
-    transform: rotate(359deg);
+    transform: rotateY(359deg) rotateX(359deg) rotateZ(359deg) scale(1.2);
   }
 }
