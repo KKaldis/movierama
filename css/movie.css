@@ -65,19 +65,29 @@ movie {
   transform: scale(0.9);
 }
 
-.details-movie-card:hover {
+.details-movie-card:hover > span {
   border: 1px solid var(--bs-primary);
   transform: scale(1);
 }
 
 .details-movie-card > img {
   height: inherit;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .details-movie-card > h6 {
   margin: 0;
   font-weight: 400;
   font-size: 1rem;
+}
+
+.details-movie-card > span {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 .overflow-x-a {

@@ -22,7 +22,6 @@ main {
 
 @media only screen and (max-width: 1700px) {
   main {
-    margin-top: 90px;
     padding: 4rem 0rem;
   }
 }
@@ -67,8 +66,35 @@ span {
   pointer-events: none;
 }
 
-a{
+a {
   color: white !important;
   font-style: italic;
   font-weight: 400;
+}
+
+h1 {
+  margin: 0px;
+}
+viewport h1 span {
+  margin: 0px;
+  text-align: center;
+  font-weight: 900;
+  font-family: Kanit;
+  font-style: italic;
+  font-size: 5rem;
+  padding-top: 2rem;
+  display: block;
+  margin: 11px 0 17px 0;
+  color: var(--glass-dark-50);
+  text-shadow: 0 -2px 1px var(--bs-secondary),
+    0 13.36px 8.896px var(--glass-dark-50);
+  letter-spacing: -2px;
+}
+
+@media only screen and (max-width: 800px) {
+  viewport h1 span {
+    padding-top: 3em;
+    font-size: 3rem;
+    /* letter-spacing: -4px; */
+  }
 }

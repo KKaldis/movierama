@@ -29,7 +29,9 @@ const getSearch = async (page, isTyping) => {
 
   //set the lenght of search to check if the user is searching
   search.value.length > 0 ? isSearching = true : isSearching = false
-
+  // change mode text
+  isSearching ? (mode.innerText = 'Searching...')
+    : (mode.innerText = 'Now Playing')
   //check if is typing or scroling to reset or add search results
   if (isTyping !== "scrolling") {
     main.innerHTML = ""

@@ -20,7 +20,8 @@ var scrolling = true;
 var mobSearch = false;
 //init movie details modal state
 var isDetailsOpen = false;
-
+// dom element for searching or now playing mode
+var mode;
 
 
 //! RUN AFTER DOM IS FULLY LOADED
@@ -29,12 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
   main = document.getElementById('main');
   // init movies card container variable
   main.innerHTML = '';
+  // get the mode element
+  mode = document.getElementById('mode')
   // get the search input tag
   search = document.getElementById("search");
   //click on search clear (X) brings refectch 
   document.getElementById("search").addEventListener("search", (event) => {
     main.innerHTML = '';
-    getNowPlaying(page=1)
+    mode.innerText = 'Now Playing'
+    getNowPlaying(page = 1)
   });
 
   // run the fetch function to get the genres
