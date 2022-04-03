@@ -66,3 +66,9 @@ main {
 span {
   pointer-events: none;
 }
+
+a{
+  color: white !important;
+  font-style: italic;
+  font-weight: 400;
+}

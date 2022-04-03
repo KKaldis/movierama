@@ -114,6 +114,7 @@ header .btn {
 .rotate {
   padding: 0rem 0.5rem;
   animation: rotation 2s infinite alternate;
+  font-weight: 400;
 }
 
 @keyframes rotation {

@@ -24,19 +24,6 @@ movie {
   margin: 5rem;
 }
 
-@media only screen and (max-width: 1200px) {
-  .movie-container {
-    padding: 0rem;
-    margin: 2rem;
-  }
-  .no-tag {
-    font-size: 1.2rem !important;
-  }
-  .overflow-x-a {
-    margin: 0px !important;
-  }
-}
-
 .movie-container-span {
   position: absolute;
   top: 0px;
@@ -109,12 +96,6 @@ movie {
   justify-content: space-between;
   height: fit-content;
   position: relative;
-}
-
-@media only screen and (max-width: 1200px) {
-  .title {
-    font-size: 1.25rem;
-  }
 }
 
 .player {
@@ -196,6 +177,19 @@ movie {
   #video {
     height: 0px !important;
   }
+  .movie-container {
+    padding: 0rem;
+    margin: 2rem;
+  }
+  .no-tag {
+    font-size: 1.2rem !important;
+  }
+  .overflow-x-a {
+    margin: 0px !important;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
 }
 
 #video {
@@ -214,9 +208,13 @@ movie {
   }
   .reviews {
     width: auto;
+    padding: 1rem 0rem;
   }
   #video {
     height: 0px !important;
+  }
+  .review-single {
+    overflow-wrap: break-word;
   }
 }
 
