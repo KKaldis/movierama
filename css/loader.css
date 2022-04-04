@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --bs-dark: #212529;
+  --bs-light: #f8f9fa;
+}
+
+body {
+  background-color: var(--bs-dark);
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.loader {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.rotate {
+  animation: rotation 5s infinite alternate ease-in-out;
+  font-weight: 100;
+  color: var(--bs-light);
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  height: 6rem;
+  width: 2rem;
+  font-style: italic;
+  position: fixed;
+  user-select: none;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg) scale(1.5);
+  }
+}
+
+.mirrorX {
+  transform: scale(-1, 1);
+}
+
+.mirrorY {
+  transform: scale(1, -1);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.deg-45 {
+  transform: rotate(-45deg);
+}
+
+.neon-text {
+  display: flex;
+  flex-direction: row;
+  -webkit-animation: flicker 1.5s infinite alternate;
+  animation: flicker 1.5s infinite alternate, hueRotation 2s linear infinite;
+  color: var(--bs-light);
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #00acfc,
+      0 0 82px #00acfc, 0 0 92px #0061fc, 0 0 102px #0061fc, 0 0 151px #0061fc;
+
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0097fc,
+      0 0 80px #00b5fc, 0 0 90px #0061fc, 0 0 100px #0061fc, 0 0 150px #0061fc;
+
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #00acfc,
+      0 0 73px #00acfc, 0 0 80px #0061fc, 0 0 94px #0061fc, 0 0 140px #0061fc;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.rgb {
+  -webkit-animation: hueRotation 4s linear infinite;
+  animation: hueRotation 4s linear infinite;
+}
+
+@keyframes hueRotation {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* .threeSixty {
+  animation: threeSixty 5s ease-in-out alternate infinite ;
+} */
+
+@keyframes threeSixty {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
