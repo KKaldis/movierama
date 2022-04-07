@@ -9,3 +9,18 @@
 
 /* REMOVE FOR PERFORMANCE */
 @import url(fancy.css);
+
+/*  FANCY REMOVE FOR PERFORMANCE ON MOBILE DEVICES  */
+/*  DISABLING FANCY IMPORT WILL PERFORM EVEN BETTER */
+/*  AND REMOVE ANIMATIONS AND PERFORM EVEN BETTER   */
+
+@media only screen and (max-width: 800px) {
+  * {
+    filter: drop-shadow(none) !important;
+    box-shadow: none !important;
+    /* text-shadow: none !important; */
+    filter: blur(none) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}

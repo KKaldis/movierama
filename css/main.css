@@ -74,6 +74,7 @@ a {
 
 h1 {
   margin: 0px;
+ 
 }
 viewport h1 span {
   margin: 0px;
@@ -89,6 +90,8 @@ viewport h1 span {
   text-shadow: 0 -2px 1px var(--bs-secondary),
     0 13.36px 8.896px var(--glass-dark-50);
   letter-spacing: -2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--bs-primary);
 }
 
 @media only screen and (max-width: 800px) {
